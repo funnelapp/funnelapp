@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #F7F7F7; /* Soft off-white background */
+            color: #333; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #ffffff; /* Light white background for content */
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333; /* Dark gray for headings */
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa; /* Lighter gray for footer text */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: #4CAF50; /* Soft green button color */
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #45a049; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+        .logo {
+            width: 120px;
+            margin: 20px auto;
+            display: block;
+        }
+        .tagline {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .highlight {
+            color: #FF9800; /* Warm orange color for emphasis */
+            display: block;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 20px;
+            }
+            .logo {
+                width: 100px;
+            }
+            .tagline {
+                font-size: 1.2em;
+            }
+            .btn {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            h1, h2 {
+                font-size: 1.3em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                width: 90px;
+            }
+            .tagline {
+                font-size: 1em;
+            }
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+            h1, h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="App Logo" class="logo">
+    <p class="tagline">Create a Cash Generating Tree. <span class="highlight">Join Funnel.</span></p>
+    
+    <div class="container">
+        <h1>Account Deletion Request</h1>
+        <p>To request the deletion of your account, please click the "Delete Account" button below. You will be prompted to provide your details in the email that opens, including your Username, Email, and Mobile Number.</p>
+
+        <button type="button" onclick="sendDeletionRequest()" class="btn">Delete Account</button>
+
+        <p class="footer">By clicking "Delete Account", an email will be generated for us to proceed with your request. Please ensure that all information is correct before submitting.</p>
+    </div>
+
+    <script>
+        function sendDeletionRequest() {
+            // Prepare the email details
+            const subject = encodeURIComponent("Account Deletion Request");
+            const body = encodeURIComponent(
+                "I would like to request the deletion of my account.\n\nPlease provide the following details:\n\nUsername: [Enter Username]\nEmail: [Enter Email]\nMobile Number: [Enter Mobile Number]"
+            );
+
+            // Create the mailto URL
+            const mailtoLink = `mailto:fintaxcoach2@gmail.com?subject=${subject}&body=${body}`;
+
+            // Open the mail client with the pre-filled content
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+</html>
